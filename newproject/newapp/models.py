@@ -6,7 +6,7 @@ class Employees(models.Model):
     email=models.EmailField(max_length=30)
     address=models.TextField(null=True)
     phone=models.IntegerField()
-    image=models.ImageField(upload_to="media",null=True)
+    image=models.ImageField(upload_to="img",null=True)
 
     def __str__(self):
         return self.name

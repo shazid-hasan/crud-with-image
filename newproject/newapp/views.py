@@ -17,6 +17,8 @@ def ADD(request):
         email=request.POST.get('email')
         address=request.POST.get('address')
         phone=request.POST.get('phone')
+        image=request.FILES['image']
+        
        
 
         emp = Employees(
@@ -24,6 +26,7 @@ def ADD(request):
             email=email,
             address=address,
             phone=phone,
+            image=image,
           
         )
         emp.save()
@@ -46,13 +49,15 @@ def UPDATE(request,id):
         email=request.POST.get('email')
         address=request.POST.get('address')
         phone=request.POST.get('phone')
+        image=request.FILES['image']
 
         emp = Employees(
             id = id,
             name =name,
             email=email,
             address=address,
-            phone=phone
+            phone=phone,
+            image=image,
         )
         emp.save()
         return redirect('home')
